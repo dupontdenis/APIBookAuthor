@@ -1,0 +1,58 @@
+# API BookAuthor - REST Client requests
+#
+# Usage notes:
+# - Start MongoDB and run `node app.js` in the project root.
+# - Use the REST Client extension (or similar) to run the requests in this file.
+# - Replace {{AUTHOR_ID}} and {{BOOK_ID}} placeholders with actual IDs returned by the API.
+
+### Create an author
+POST http://localhost:3000/authors
+Content-Type: application/json
+
+{
+  "name": "Alice Example"
+}
+
+### List authors
+GET http://localhost:3000/authors
+
+### Get an author by ID
+GET http://localhost:3000/authors/691c6314c94ea9888d7ff177
+
+### Update an author
+PUT http://localhost:3000/authors/{{AUTHOR_ID}}
+Content-Type: application/json
+
+{
+  "name": "Alice Updated"
+}
+
+### Delete an author
+DELETE http://localhost:3000/authors/{{AUTHOR_ID}}
+
+### Create a book (use an existing author id in the authors array)
+POST http://localhost:3000/books
+Content-Type: application/json
+
+{
+  "title": "Example Book",
+  "authors": ["691c6314c94ea9888d7ff177"]
+}
+
+### List books (authors populated)
+GET http://localhost:3000/books
+
+### Get a book by ID
+GET http://localhost:3000/books/{{BOOK_ID}}
+
+### Update a book
+PUT http://localhost:3000/books/{{BOOK_ID}}
+Content-Type: application/json
+
+{
+  "title": "Example Book (Updated)",
+  "authors": ["{{AUTHOR_ID}}"]
+}
+
+### Delete a book
+DELETE http://localhost:3000/books/{{BOOK_ID}}
