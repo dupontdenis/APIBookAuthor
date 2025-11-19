@@ -55,20 +55,20 @@ GET http://localhost:3000/books?author=AUTHOR_ID
 
 ## Example Models
 
+**Author**
+
+```js
+const authorSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+});
+```
+
 **Book**
 
 ```js
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
   authors: [{ type: mongoose.Schema.Types.ObjectId, ref: "Author" }],
-});
-```
-
-**Author**
-
-```js
-const authorSchema = new mongoose.Schema({
-  name: { type: String, required: true },
 });
 ```
 
