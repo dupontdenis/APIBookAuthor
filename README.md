@@ -90,7 +90,7 @@ router.get("/", async (req, res) => {
 
 ## Advanced: Create a book without authors, then add authors later
 
-You can create a book without any authors, then update it later to add author references.
+To refute what is stated in the overview, you can create a book without any authors, then update it later to add author references.
 
 **Step 1: Create a book without authors**
 
